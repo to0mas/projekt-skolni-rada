@@ -1,33 +1,31 @@
 <?php include "includes/db.php"; ?>
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Členové školské rady</title>
+  <title>Školní rada</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h2>Členové školsé rady</h2>
-  <div class="clenove">
-    <?php
-    $sql = "SELECT * FROM clenove";
-    $result = $conn->query($sql);
+  <header>
+    <h1>Školní rada</h1>
+    <nav>
+      <a href="index.php">Úvod</a>
+      <a href="clenove.php">Členové</a>
+      <a href="dokumenty.php">Dokumenty</a>
+      <a href="schuzky.php">Schůzky</a>
+      <a href="kontakt.php">Kontakt</a>
+    </nav>
+  </header>
 
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        echo "<div class='clen'>";
-        if ($row['fotografie']) {
-          echo "<img src='img/".$row['fotografie']."' alt='".$row['jmeno']."'>";
-        }
-        echo "<h3>".$row['jmeno']."</h3>";
-        echo "<p>".$row['funkce']."</p>";
-        echo "<p>".$row['kontakt']."</p>";
-        echo "</div>";
-      }
-    } else {
-      echo "Žádní členové nejsou v databázi.";
-    }
-    ?>
-  </div>
+  <main>
+    <h2>Vítejte na stránkách školní rady</h2>
+    <p>Zde najdete informace o členech, dokumentech a nadcházejících schůzkách.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Školní rada
+  </footer>
 </body>
 </html>
