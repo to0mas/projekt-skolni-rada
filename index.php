@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h2>Členové školské rady</h2>
+  <h2>Členové školsé rady</h2>
   <div class="clenove">
     <?php
     $sql = "SELECT * FROM clenove";
